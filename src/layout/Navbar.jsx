@@ -4,6 +4,7 @@ import { useState } from "react"
 function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false)
+  const closeMenu = () => setMenuOpen(false)
 
   const linkClass = ({ isActive }) =>
     isActive
@@ -67,31 +68,31 @@ function Navbar() {
 
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden border-t border-stone-200 px-6 py-4 flex flex-col gap-4 text-sm bg-[#F3EEE8]">
+     {menuOpen && (
+  <div className="md:hidden border-t border-stone-200 px-6 py-4 flex flex-col gap-4 text-sm bg-[#F3EEE8]">
 
-          <NavLink to="/" className={linkClass}>
-            Home
-          </NavLink>
+    <NavLink to="/" className={linkClass} onClick={closeMenu}>
+      Home
+    </NavLink>
 
-          <NavLink to="/start-here" className={linkClass}>
-            Start Here
-          </NavLink>
+    <NavLink to="/start-here" className={linkClass} onClick={closeMenu}>
+      Start Here
+    </NavLink>
 
-          <NavLink to="/resources" className={linkClass}>
-            Resources
-          </NavLink>
+    <NavLink to="/resources" className={linkClass} onClick={closeMenu}>
+      Resources
+    </NavLink>
 
-          <NavLink to="/about" className={linkClass}>
-            About
-          </NavLink>
+    <NavLink to="/about" className={linkClass} onClick={closeMenu}>
+      About
+    </NavLink>
 
-          <NavLink to="/contact" className={linkClass}>
-            Contact
-          </NavLink>
+    <NavLink to="/contact" className={linkClass} onClick={closeMenu}>
+      Contact
+    </NavLink>
 
-        </div>
-      )}
+  </div>
+)}
 
     </header>
   )
