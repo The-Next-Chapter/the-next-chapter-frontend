@@ -4,24 +4,28 @@ function Footer() {
   return (
     <footer className="bg-[#F3EEE8] border-t border-stone-200 mt-20">
 
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl px-6 py-12 mx-auto">
 
         {/* Top Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
 
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
 
-              <div className="w-6 h-6 bg-[#C9B38C] rounded flex items-center justify-center text-white text-xs font-bold">
-                TNC
+              <div className="flex items-center justify-center text-xs font-bold text-white w-30 h-18">
+               <img
+            src="/images/tnxc.png"
+            alt="TNX"
+            className=""
+          />
               </div>
 
               
 
             </div>
 
-            <p className="text-sm text-stone-500 leading-relaxed">
+            <p className="text-sm leading-relaxed text-stone-500">
               A serene and supportive platform for parents,
               caregivers, and educators.
             </p>
@@ -64,7 +68,7 @@ function Footer() {
               Contact Us
             </h4>
 
-            <p className="text-sm text-stone-500 mb-2">
+            <p className="mb-2 text-sm text-stone-500">
               Have questions or need support? Reach out to us.
             </p>
 
@@ -80,7 +84,7 @@ function Footer() {
 
 
         {/* Divider */}
-        <div className="border-t border-stone-200 mt-10 pt-6 text-center text-xs text-stone-400">
+        <div className="pt-6 mt-10 text-xs text-center border-t border-stone-200 text-stone-400">
 
           © {new Date().getFullYear()} The Next Chapter. All rights reserved.
 

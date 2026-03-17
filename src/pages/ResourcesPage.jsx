@@ -1,58 +1,56 @@
+import { useEffect, useState } from "react"
 import { Card } from "../components/ui"
 import { Link } from "react-router-dom"
-
-const resources = [
-  {
-    title: "Understanding Childhood Milestones",
-    slug: "understanding-childhood-milestones",
-    summary:
-      "Understanding developmental milestones helps adults support children appropriately at each stage of growth."
-  },
-  {
-    title: "The Power of Play-Based Learning",
-    slug: "power-of-play-based-learning",
-    summary:
-      "Exploring how play supports children’s intellectual, emotional, and social development."
-  },
-  {
-    title: "Effective Communication with Teens",
-    slug: "effective-communication-with-teens",
-    summary:
-      "Strategies for building trust and maintaining open communication with teenagers."
-  },
-  {
-    title: "Gentle Parenting Techniques",
-    slug: "gentle-parenting-techniques",
-    summary:
-      "Guiding children with empathy, respect, and clear boundaries while helping them understand their emotions."
-  },
-  {
-    title: "Navigating Sibling Rivalry",
-    slug: "navigating-sibling-rivalry",
-    summary:
-      "Helping siblings manage conflict in healthy ways while building stronger relationships."
-  },
-  {
-    title: "Supporting Emotional Regulation in Children",
-    slug: "supporting-emotional-regulation",
-    summary:
-      "Helping children recognize, understand, and manage their emotions."
-  },
-  {
-    title: "Building Resilience in Children",
-    slug: "building-resilience-in-children",
-    summary:
-      "Helping children develop perseverance and the ability to cope with challenges."
-  },
-  {
-    title: "Creating a Positive Learning Environment",
-    slug: "creating-positive-learning-environment",
-    summary:
-      "How adults can create environments where children feel safe, supported, and motivated to learn."
-  }
-]
+import axios from "axios"
 
 function ResourcesPage() {
+
+  const [resources, setResources] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+
+    const fetchResources = async () => {
+      try {
+
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_BASE_URL}/resources`
+        )
+
+        setResources(response.data)
+
+      } catch (err) {
+
+        setError("Failed to load resources")
+
+      } finally {
+
+        setLoading(false)
+
+      }
+    }
+
+    fetchResources()
+
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="text-center text-stone-500">
+        Loading resources...
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="text-center text-red-500">
+        {error}
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-12">
 

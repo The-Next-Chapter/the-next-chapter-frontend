@@ -13,25 +13,26 @@ function Navbar() {
 
   return (
     <header className="bg-[#F3EEE8] border-b border-stone-200">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="flex items-center justify-between max-w-6xl px-6 py-4 mx-auto">
 
         {/* Logo */}
         <NavLink to="/" className="flex items-center gap-2">
 
           {/* Logo Placeholder */}
-          <div className="w-8 h-8 bg-[#C9B38C] rounded-md flex items-center justify-center text-white text-sm font-bold">
-            ▣
+          <div className="flex justify-center w-40 h-20 text-white rounded-md text-font-bold items-white center ">
+           <img
+            src="/images/tnxc.png"
+            alt="TNX"
+            className=""
+          />
           </div>
 
-          <span className="text-[#C9B38C] font-semibold text-lg">
-            TNC
-          </span>
 
         </NavLink>
 
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm">
+        <nav className="items-center hidden gap-8 text-sm md:flex">
 
           <NavLink to="/" className={linkClass}>
             Home

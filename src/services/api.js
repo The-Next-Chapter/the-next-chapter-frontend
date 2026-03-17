@@ -1,21 +1,18 @@
-const API_BASE = "http://localhost:5000/api"
+import axios from "axios"
 
-export async function fetchResources() {
-  const res = await fetch(`${API_BASE}/resources`)
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL
+})
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch resources")
-  }
 
-  return res.json()
-}
+export const getResources = () => API.get("/resources")
 
-export async function fetchResourceBySlug(slug) {
-  const res = await fetch(`${API_BASE}/resources/${slug}`)
+export const getResourceBySlug = (slug) => API.get(`/resources/${slug}`)
 
-  if (!res.ok) {
-    throw new Error("Resource not found")
-  }
+export const sendContactMessage = (data) => API.post("/contact", data)
 
-  return res.json()
-}
+export const subscribeNewsletter = (data) => API.post("/newsletter", data)
+
+console.log(import.meta.env.VITE_API_BASE_URL)
+
+export default API
