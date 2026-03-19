@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Card } from "../components/ui"
 import { Link } from "react-router-dom"
 import axios from "axios"
+import PageWrapper from "../components/PageWrapper"
+
 
 function ResourcesPage() {
 
@@ -53,7 +55,7 @@ function ResourcesPage() {
 
   return (
     <div className="space-y-12">
-
+      <PageWrapper>
       <div className="max-w-2xl mx-auto text-center">
         <h1 className="text-3xl md:text-4xl font-semibold text-[#C9B38C]">
           Explore Our Resources
@@ -89,6 +91,7 @@ function ResourcesPage() {
         ))}
 
       </div>
+      </PageWrapper>
 
     </div>
   )

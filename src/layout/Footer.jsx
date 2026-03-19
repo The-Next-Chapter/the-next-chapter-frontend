@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+import NewsletterForm from "../components/NewsletterForm"
+import { Linkedin, Instagram, Youtube } from "lucide-react"
 
 function Footer() {
   return (
@@ -12,17 +14,12 @@ function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-
               <div className="flex items-center justify-center text-xs font-bold text-white w-30 h-18">
-               <img
-            src="/images/tnxc.png"
-            alt="TNX"
-            className=""
-          />
+                <img
+                  src="/images/tnxc.png"
+                  alt="TNX"
+                />
               </div>
-
-              
-
             </div>
 
             <p className="text-sm leading-relaxed text-stone-500">
@@ -48,21 +45,22 @@ function Footer() {
           </div>
 
 
-          {/* Resources */}
+          {/* Newsletter */}
           <div>
             <h4 className="text-sm font-semibold text-[#5A524A] mb-3">
-              Resources
+              Stay Connected
             </h4>
 
-            <ul className="space-y-2 text-sm text-stone-600">
-              <li>Articles</li>
-              <li>Guides</li>
-              <li>Tools</li>
-            </ul>
+            <p className="mb-4 text-sm leading-relaxed text-stone-500">
+              Receive weekly insights, reflections, and intentional
+              guidance for raising confident and emotionally healthy children.
+            </p>
+
+            <NewsletterForm />
           </div>
 
 
-          {/* Contact */}
+          {/* Contact + Social */}
           <div>
             <h4 className="text-sm font-semibold text-[#5A524A] mb-3">
               Contact Us
@@ -78,6 +76,42 @@ function Footer() {
             >
               Get in Touch
             </Link>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-4 mt-4 text-stone-500">
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-[#C9B38C]"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={18} />
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-[#C9B38C]"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-[#C9B38C]"
+                aria-label="YouTube"
+              >
+                <Youtube size={18} />
+              </a>
+
+            </div>
+
           </div>
 
         </div>
@@ -85,9 +119,7 @@ function Footer() {
 
         {/* Divider */}
         <div className="pt-6 mt-10 text-xs text-center border-t border-stone-200 text-stone-400">
-
           © {new Date().getFullYear()} The Next Chapter. All rights reserved.
-
         </div>
 
       </div>

@@ -7,6 +7,7 @@ import {
   Flag,
   ShieldCheck
 } from "lucide-react"
+import PageWrapper from "../components/PageWrapper"
 
 function AboutPage() {
 
@@ -57,10 +58,10 @@ function AboutPage() {
 
   return (
     <div className="space-y-24">
-
+ <PageWrapper>
       {/* STORY */}
 
-      <section className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-start">
+      <section className="grid items-start max-w-6xl gap-12 px-4 mx-auto md:grid-cols-2">
 
         <div className="space-y-6">
 
@@ -68,24 +69,24 @@ function AboutPage() {
             Our Story
           </h2>
 
-          <p className="text-stone-600 leading-relaxed">
+          <p className="leading-relaxed text-stone-600">
             The Next Chapter was born from a deep personal conviction.
             As a mother of two boys, I began reflecting on the kind of
             men they would become.
           </p>
 
-          <p className="text-stone-600 leading-relaxed">
+          <p className="leading-relaxed text-stone-600">
             Not just academically successful, but emotionally intelligent.
             Not just confident, but kind. Not just assertive, but respectful.
           </p>
 
-          <p className="text-stone-600 leading-relaxed">
+          <p className="leading-relaxed text-stone-600">
             Raising a child is not the responsibility of parents alone.
             Teachers shape minds. Caregivers influence behaviour.
             Mentors guide identity. Communities reinforce values.
           </p>
 
-          <p className="text-stone-600 leading-relaxed">
+          <p className="leading-relaxed text-stone-600">
             The Next Chapter is about building a collaborative village
             around every child.
           </p>
@@ -96,7 +97,7 @@ function AboutPage() {
           <img
             src="/images/about.jpg"
             alt="Parent supporting a child"
-            className="rounded-xl shadow-md w-full object-cover"
+            className="object-cover w-full shadow-md rounded-xl"
           />
         </div>
 
@@ -107,19 +108,19 @@ function AboutPage() {
 
       <section className="bg-[#F3EEE8] py-16">
 
-        <div className="max-w-4xl mx-auto px-4 bg-white rounded-xl shadow-md p-8">
+        <div className="max-w-4xl p-8 px-4 mx-auto bg-white shadow-md rounded-xl">
 
           <h2 className="text-3xl font-semibold text-[#5A524A] mb-4">
             Our Purpose
           </h2>
 
-          <p className="text-stone-600 leading-relaxed mb-4">
+          <p className="mb-4 leading-relaxed text-stone-600">
             Our purpose is to create a supportive ecosystem that helps
             raise children who are intentional, confident, kind,
             assertive, resilient, and emotionally aware.
           </p>
 
-          <ul className="list-disc pl-6 text-stone-600 space-y-2">
+          <ul className="pl-6 space-y-2 list-disc text-stone-600">
 
             <li>Equip parents with practical tools and structured guidance</li>
             <li>Support teachers and caregivers with growth-focused resources</li>
@@ -129,7 +130,7 @@ function AboutPage() {
 
           </ul>
 
-          <p className="text-stone-600 mt-4">
+          <p className="mt-4 text-stone-600">
             We are not raising children just for today.
             We are raising adults for tomorrow.
           </p>
@@ -141,13 +142,13 @@ function AboutPage() {
 
       {/* VALUES */}
 
-      <section className="max-w-6xl mx-auto px-4 space-y-10">
+      <section className="max-w-6xl px-4 mx-auto space-y-10">
 
         <h2 className="text-3xl font-semibold text-[#5A524A]">
           Our Values
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 md:grid-cols-2">
 
           {values.map((value, index) => {
             const Icon = value.icon
@@ -155,7 +156,7 @@ function AboutPage() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition flex gap-4"
+                className="flex gap-4 p-6 transition bg-white shadow-md rounded-xl hover:shadow-lg"
               >
 
                 <div className="flex items-start pt-1">
@@ -167,7 +168,7 @@ function AboutPage() {
                     {value.title}
                   </h3>
 
-                  <p className="text-stone-600 leading-relaxed">
+                  <p className="leading-relaxed text-stone-600">
                     {value.text}
                   </p>
                 </div>
@@ -179,6 +180,7 @@ function AboutPage() {
         </div>
 
       </section>
+      </PageWrapper>
 
     </div>
   )

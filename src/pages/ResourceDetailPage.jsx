@@ -34,7 +34,7 @@ const extractText = (node) => {
 function ResourceDetailPage() {
 
   const { slug } = useParams()
-
+  const [activeId, setActiveId] = useState(null)
   const [resource, setResource] = useState(null)
   const [relatedResources, setRelatedResources] = useState([])
   const [toc, setToc] = useState([])
@@ -88,6 +88,31 @@ function ResourceDetailPage() {
     fetchData()
 
   }, [slug])
+
+  useEffect(() => {
+
+  const handleScroll = () => {
+
+    const headings = document.querySelectorAll("h2[id]")
+
+    let current = null
+
+    headings.forEach((heading) => {
+      const rect = heading.getBoundingClientRect()
+
+      if (rect.top <= 120) {
+        current = heading.id
+      }
+    })
+
+    setActiveId(current)
+  }
+
+  window.addEventListener("scroll", handleScroll)
+
+  return () => window.removeEventListener("scroll", handleScroll)
+
+}, [])
 
 
   if (loading) {
@@ -159,7 +184,11 @@ function ResourceDetailPage() {
                         })
                       }
                     }}
-                    className="transition text-stone-600 hover:text-gold"
+                    className={`transition ${
+  activeId === item.id
+    ? "text-gold font-medium"
+    : "text-stone-600 hover:text-gold"
+}`}
                   >
                     {item.text}
                   </a>

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom"
 import { Button } from "../components/ui"
+import PageWrapper from "../components/PageWrapper"
 
 function HomePage() {
   return (
     <div className="space-y-35">
-
+     <PageWrapper>
       {/* HERO SECTION */}
 
-      <section className="grid md:grid-cols-2 gap-10 items-center">
+      <section className="grid items-center gap-10 md:grid-cols-2">
 
         {/* LEFT CONTENT */}
 
@@ -17,13 +18,13 @@ function HomePage() {
             Guiding You Through <br /> Every New Beginning.
           </h1>
 
-          <p className="mt-5 text-stone-600 max-w-lg">
+          <p className="max-w-lg mt-5 text-stone-600">
             A supportive space for parents, caregivers, and educators
             to explore curated resources, find compassionate guidance,
             and connect with a community that understands.
           </p>
 
-          <div className="mt-6 flex gap-4 items-center">
+          <div className="flex items-center gap-4 mt-6">
 
   <Link to="/start-here">
     <Button>
@@ -52,16 +53,17 @@ function HomePage() {
         </div>
 
       </section>
+       </PageWrapper>
 
       {/* PURPOSE SECTION */}
 
-      <section className="mt-10 text-center  max-w-3xl mx-auto">
-
+      <section className="max-w-3xl mx-auto mt-10 text-center">
+   <PageWrapper>
         <h2 className="text-2xl md:text-3xl font-semibold text-[#5A524A]">
           Our Purpose: Nurturing Growth and Understanding.
         </h2>
 
-        <p className="mt-4 text-stone-600 leading-relaxed">
+        <p className="mt-4 leading-relaxed text-stone-600">
           The Next Chapter is dedicated to empowering those who shape
           young lives. We believe in providing accessible,
           evidence-based content within a compassionate framework,
@@ -70,7 +72,7 @@ function HomePage() {
           you can find clarity, comfort, and practical tools to
           support yourself and the children in your care.
         </p>
-
+  </PageWrapper>
       </section>
 
     </div>
